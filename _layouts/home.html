@@ -1,5 +1,40 @@
 {% include header.html %}
 
+<img class="bg" src="/img/bg.png" alt="">
+<img class="text" src="/img/text.png" alt="">
 
+<h1>23 Maart 2022</h1>
+
+
+<div class="count">
+    <div class="blue blue-mobile">
+        <p><span class="number"></span><span>Days</span></p>
+        <svg viewBox="0 0 100 100">
+            <circle class="background" cx=50 cy=50 r=43></circle>
+            <circle data-time="d" class="foreground f1" cx=50 cy=50 r=43></circle>
+        </svg>
+    </div>
+    <div class="blue">
+        <p><span class="number"></span><span>Hours</span></p>
+        <svg viewBox="0 0 100 100">
+            <circle class="background" cx=50 cy=50 r=43></circle>
+            <circle data-time="h" class="foreground f2" cx=50 cy=50 r=43></circle>
+        </svg>
+    </div>
+    <div class="blue-mobile">
+        <p><span class="number"></span><span>Minutes</span></p>
+        <svg viewBox="0 0 100 100">
+            <circle class="background" cx=50 cy=50 r=43></circle>
+            <circle data-time="m" class="foreground f3" cx=50 cy=50 r=43></circle>
+        </svg>
+    </div>
+    <div>
+        <p><span class="number"></span><span>Seconds</span></p>
+        <svg viewBox="0 0 100 100">
+            <circle class="background" cx=50 cy=50 r=43 ></circle>
+            <circle data-time="s" class="foreground f4" cx=50 cy=50 r=43 ></circle>
+        </svg>
+    </div>
+</div>
 
 {% include footer.html %}

@@ -1,0 +1,90 @@
+@font-face {
+    font-family: 'Bosch Sans';
+    src: url('/fonts/BoschSans-BlackItalic.woff2') format('woff2'),
+        url('/fonts/BoschSans-BlackItalic.woff') format('woff');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Bosch Sans';
+    src: url('/fonts/BoschSans-Black.woff2') format('woff2'),
+        url('/fonts/BoschSans-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Bosch Sans';
+    src: url('/fonts/BoschSans-Bold.woff2') format('woff2'),
+        url('/fonts/BoschSans-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Bosch Sans';
+    src: url('/fonts/BoschSans-RegularItalic.woff2') format('woff2'),
+        url('/fonts/BoschSans-RegularItalic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Bosch Sans';
+    src: url('/fonts/BoschSans-MediumItalic.woff2') format('woff2'),
+        url('/fonts/BoschSans-MediumItalic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Bosch Sans';
+    src: url('/fonts/BoschSans-BoldItalic.woff2') format('woff2'),
+        url('/fonts/BoschSans-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Bosch Sans';
+    src: url('/fonts/BoschSans-Regular.woff2') format('woff2'),
+        url('/fonts/BoschSans-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Bosch Sans';
+    src: url('/fonts/BoschSans-LightItalic.woff2') format('woff2'),
+        url('/fonts/BoschSans-LightItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Bosch Sans';
+    src: url('/fonts/BoschSans-Medium.woff2') format('woff2'),
+        url('/fonts/BoschSans-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Bosch Sans';
+    src: url('/fonts/BoschSans-Light.woff2') format('woff2'),
+        url('/fonts/BoschSans-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
