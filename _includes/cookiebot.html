@@ -1,0 +1,104 @@
+{% assign cookieData = site.data.cookieconfig %}
+{% assign cookieContent = cookieData.content %}
+
+{% assign text_color = cookieData.colors.text_color %}
+{% assign background_color = cookieData.colors.background_color %}
+{% assign highlight_color = cookieData.colors.highlight_color %}
+{% assign highlight_text_color = cookieData.colors.highlight_text_color %}
+
+{% assign categories = cookieData.categories %}
+{% assign necessaryCookies = cookieData.cookies | where: "category", "necessary" %}
+{% assign preferencesCookies = cookieData.cookies | where: "category", "preferences" %}
+{% assign statisticsCookies = cookieData.cookies | where: "category", "statistics" %}
+{% assign marketingCookies = cookieData.cookies | where: "category", "marketing" %}
+
+<section class="cookiebot {{ cookieData.style }}">
+    <article class="cookiebot">
+        <h3>{{ cookieContent.initial_payload.title }}</h3>
+        <p>{{ cookieContent.initial_payload.description_text }}</p>
+        <div class="box">
+            <fieldset>
+                <legend>Different cookie preferences</legend>
+                {% for item in categories %}
+                <div class="label">
+                    <input type="checkbox" id="cookie_{{ item.title }}" data-for="{{ item.title | slugify }}"
+                        for="cookies" {% if forloop.first %} disabled checked {% endif %}>
+                    <label for="cookie_{{ item.title }}">{{ item.title | capitalize }}</label>
+                </div>
+                {% endfor %}
+            </fieldset>
+            <div class="buttons">
+                <a onclick=onCookieClick(true);><span>Allow all cookies</span></a>
+                <a onclick=onCookieClick(false);><span>Allow selected cookies</span></a>
+            </div>
+        </div>
+        <input type="checkbox" id="cookie_details">
+        <label for="cookie_details">details</label>
+        <div class="declarations">
+            <div class="top">
+                <h3>Cookie declaration</h3><span>i <span>{{ cookieContent.about }}</span> </span>
+            </div>
+            <ul>
+                {% for item in categories %}
+                <li>
+                    {% if item.title == 'necessary' %}{% assign length = necessaryCookies.size %}
+                    {% elsif item.title == 'preferences' %}{% assign length = preferencesCookies.size %}
+                    {% elsif item.title == 'statistics' %}{% assign length = statisticsCookies.size %}
+                    {% elsif item.title == 'marketing' %}{% assign length = marketingCookies.size %}
+                    {% endif %}
+                    <input type="radio" name="cookie_nav" onchange='updateTable(this);' id="{{ item.title | slugify }}"
+                        {% if forloop.first %}checked{% endif %}>
+                    <label for="{{ item.title | slugify }}">{{ item.title | capitalize }} ({{ length }})</label>
+                </li>
+                {% endfor %}
+            </ul>
+            <div class="tables">
+                {% for item in categories %}
+                <article class="{{ item.title | slugify }}">
+                    {% if item.title == 'necessary' %}{% assign cookieSet = necessaryCookies %}
+                    {% elsif item.title == 'preferences' %}{% assign cookieSet = preferencesCookies %}
+                    {% elsif item.title == 'statistics' %}{% assign cookieSet = statisticsCookies %}
+                    {% elsif item.title == 'marketing' %}{% assign cookieSet = marketingCookies %}
+                    {% endif %}
+
+                    <p>{{ item.description }}</p>
+                    {% if cookieSet.size > 0 %}
+                    <table>
+                        <tr>
+                            <th>Name</th>
+                            <th>Provider</th>
+                            <th>Purpose</th>
+                            <th>Expiry</th>
+                            <th>Type</th>
+                        </tr>
+                        {% for item in cookieSet %}
+                        <tr>
+                            <td>{{ item.name }}</td>
+                            <td><a href="{{ item.provider_link }}">{{ item.provider }}</a></td>
+                            <td>{{ item.purpose }}</td>
+                            <td>{{ item.expiry }}</td>
+                            <td>{{ item.type }}</td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                    {% else %}
+                    <p class="none">We do not use these kind of cookies</p>
+                    {% endif %}
+
+                </article>
+                {% endfor %}
+            </div>
+        </div>
+    </article>
+</section>
+<script src="/js/cookiescript.js"></script>
+
+
+<style>
+    section.cookiebot {
+    --textColor: {{ text_color }};
+    --backgroundColor: {{ background_color }};
+    --highlightColor: {{ highlight_color }};
+    --highlightTextColor: {{ highlight_text_color }}
+    }
+</style>
