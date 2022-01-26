@@ -46,7 +46,7 @@ h1 { font-style: italic;  text-transform: uppercase; font-weight: 700; backgroun
 
 
 
-div.count { background: white;  display: flex; max-width: 25rem;  margin-top: 3rem; padding: 1rem; border-radius: 0.25rem; width: calc(100% - 4rem);}
+div.count { background: white;  display: flex; max-width: 25rem;  margin-top: 5rem; padding: 1rem; border-radius: 0.25rem; width: calc(100% - 4rem);}
 div.count > div {margin: 0 0.5rem;  transform: rotate(-90deg); display: flex; flex-direction: column; align-items: center; justify-content: center;}
 div.count > div p {display: flex;   transform: rotate(90deg) translateY(-0.25rem); position: absolute; font-weight: 500; font-size: 2rem; color: var(--green);  flex-direction: column; align-items: center;}
 div.count > div p span:last-of-type {font-size: 0.6rem; font-weight: 400; margin-top: -0.5rem; color: #aaa;}
