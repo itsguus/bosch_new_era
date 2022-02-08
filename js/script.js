@@ -20,7 +20,7 @@ function msToTime(duration) {
 
 
 function update() {
-    const toDate = new Date("2022/03/22 10:00"),
+    const toDate = new Date("2022/05/09 10:00"),
         now = new Date(),
         msDif = toDate - now;
 
